@@ -1,5 +1,3 @@
-"use client";
-
 type SquareProps = {
   value: string;
   onSquareClick: () => void;
