@@ -1,13 +1,12 @@
-"use client";
-
-import { useState } from "react";
-
 import Square from "./square";
 
-const Board = () => {
-  const [xIsNext, setXIsNext] = useState(true);
-  const [squares, setSquares] = useState(Array(9).fill(null));
+type BoardProps = {
+  xIsNext: boolean;
+  squares: string[];
+  onPlay: (squares: string[]) => void;
+};
 
+const Board = ({ xIsNext, squares, onPlay }: BoardProps) => {
   function handleClick(i: number) {
     if (squares[i] || calculateWinner(squares)) {
       return;
@@ -18,8 +17,7 @@ const Board = () => {
     } else {
       nextSquares[i] = "O";
     }
-    setSquares(nextSquares);
-    setXIsNext(!xIsNext);
+    onPlay(nextSquares);
   }
 
   const winner = calculateWinner(squares);
