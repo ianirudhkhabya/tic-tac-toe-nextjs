@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+
+import ThemeSwitch from "@/components/switchTheme";
+import SwitchThemeProvider from "@/providers/switchThemeProvider";
+
 import "./globals.css";
 
 const font = Inter({ subsets: ["latin"] });
@@ -16,7 +20,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={font.className}>{children}</body>
+      <body
+        className={`${font.className} bg-white dark:bg-black text-black dark:text-white`}
+      >
+        <SwitchThemeProvider>
+          {children}
+          <ThemeSwitch />
+        </SwitchThemeProvider>
+      </body>
     </html>
   );
 }

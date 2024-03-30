@@ -6,7 +6,7 @@ type SquareProps = {
 const Square = ({ value, onSquareClick }: SquareProps) => {
   return (
     <button
-      className="h-20 w-20 border border-white border-solid items-center justify-center text-2xl font-semibold"
+      className="h-20 w-20 border border-black dark:border-white border-solid items-center justify-center text-2xl font-semibold"
       onClick={onSquareClick}
     >
       {value}

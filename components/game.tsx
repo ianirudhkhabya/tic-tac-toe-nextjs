@@ -31,7 +31,7 @@ const Game = () => {
     return (
       <li key={move}>
         <button
-          className="mt-2 border border-gray-200 rounded px-2 py-1"
+          className="mt-2 border border-gray-800 dark:border-gray-200 rounded px-2 py-1"
           onClick={() => jumpTo(move)}
         >
           {description}
